@@ -81,12 +81,12 @@ def parse_argparse_statements(file_name):
 		'description' : prog_description
 	}
 
-def parse_pyfile(file_name, format='html', beginner=1, success_msg=1):
+def parse_pyfile(file_name, format='html', noob=1, success_msg=1):
 	print 'parse_pyfile file_name:', file_name
 	py_source = parse_argparse_statements(file_name)
 
 	client_arg_info = extract_values_from_code(py_source['code'])
-	output = markup(file_name, py_source['description'], client_arg_info, format=format, beginner=beginner)
+	output = markup(file_name, py_source['description'], client_arg_info, format=format, noob=noob)
 
 	outfile_name = '{name}_doc.{ext}'.format(name=file_name, ext=format)
 	save_doc(outfile_name, output)
@@ -96,7 +96,7 @@ def parse_pyfile(file_name, format='html', beginner=1, success_msg=1):
 		print 'Saved documentation to /Docs/{}'.format(outfile_name)
 
 
-def markup(title, description, arg_info, format, beginner):
+def markup(title, description, arg_info, format, noob):
 	'''
 	Loads the appropriate template based on the format argument and
 	renders it with the dict content stored in the arg_info list.   
@@ -108,7 +108,7 @@ def markup(title, description, arg_info, format, beginner):
 			return f.read()
 		
 	def load_template(): 
-		if not beginner:
+		if not noob:
 			return _open('basic.' + format)
 		return _open('full.' + format)
 
@@ -224,12 +224,12 @@ def test_run():
 	parse_pyfile('test_input.py')
 
 
-def build_doc_from_parser_obj(file_name, parser_obj, format='html', beginner=1, success_msg=1):
+def build_doc_from_parser_obj(file_name, parser_obj, format='html', noob=1, success_msg=1):
 	prog_description = parser_obj.description
 	client_arg_info = parser_obj._actions
 
 	output = markup(file_name, prog_description, 
-		client_arg_info, format=format, beginner=beginner)
+		client_arg_info, format=format, noob=noob)
 
 	outfile_name = '{name}_doc.{ext}'.format(name=file_name, ext=format)
 	# print 'outfile_name', outfile_name
@@ -241,7 +241,7 @@ def build_doc_from_parser_obj(file_name, parser_obj, format='html', beginner=1, 
 		print 'Saved documentation to /Docs/{}'.format(os.path.split(outfile_name)[-1])
 
 
-def generate_doc(f=None, format='html', beginner=1, success_msg=1):
+def generate_doc(f=None, format='html', noob=1, success_msg=1):
 
 	'''
 	Decorator for client code's main function. 
@@ -261,7 +261,7 @@ def generate_doc(f=None, format='html', beginner=1, success_msg=1):
 			file_name=filename, 
 			parser_obj=f, 
 			format=format, 
-			beginner=beginner, 
+			noob=noob, 
 			success_msg=success_msg
 			)
 		return 
@@ -280,7 +280,7 @@ def generate_doc(f=None, format='html', beginner=1, success_msg=1):
 			module_path = get_caller_path()
 			path = os.path.join(*os.path.split(module_path)[:-1])
 			filename = '{}'.format(os.path.split(module_path)[-1])
-			parse_pyfile(filename, format=format, beginner=beginner, success_msg=success_msg)
+			parse_pyfile(filename, format=format, noob=noob, success_msg=success_msg)
 		inner.__name__ = f.__name__ 
 		return inner
 
@@ -322,7 +322,7 @@ def main():
 		action='store_false')
 
 	args = parser.parse_args()
-	parse_pyfile(args.filename, format=args.format, beginner=args.noob)
+	parse_pyfile(args.filename, format=args.format, noob=args.noob)
 
 
 if __name__ == '__main__':
