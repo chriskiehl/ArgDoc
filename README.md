@@ -95,7 +95,7 @@ Drop me a line at audionautic@gmail.com
 
 Below is a sample output for a HTML/CSS validator tool. It has the noob instructions enabled so you can get a feel for what the whole document looks like. 
 
-test_input.py 
+QuickValidate.py 
 ==============  
 Validates all HTML/CSS in projects folder(s)  
 
