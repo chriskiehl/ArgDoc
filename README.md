@@ -2,7 +2,7 @@ ArgDoc
 ======
 
 <p align="center">
-	<img src=""/>
+	<img src="https://github.com/chriskiehl/ArgDoc/blob/master/img/argdoc_main.png"/>
 </p> 
 
 
