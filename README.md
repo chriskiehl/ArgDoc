@@ -53,7 +53,7 @@ To run with default settings:
     
 or with settings of your choice. 
 
-    @generate_doc(format='pdf', beginner=True)
+    @generate_doc(format='pdf', noob=True)
     def main():
         parser = argparse.ArgumentParser(bla bla bla) 
         # rest of code.. 
