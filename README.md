@@ -2,7 +2,7 @@ ArgDoc
 ======
 
 <p align="center">
-	<img src="https://github.com/chriskiehl/ArgDoc/blob/master/img/argdoc_main.png"/>
+	<img src="https://raw.github.com/chriskiehl/ArgDoc/master/img/argdoc_main.png"/>
 </p> 
 
 
@@ -17,7 +17,7 @@ Features
 * Generate  documentation in `Markdown` or `HTML`.  
 * Has detailed, ready-made instructions non-techie end-users. (enable with the `noob` flag). 
 
-ArgDoc came to be when I started freelancing building one-off scripts for clients. The documentation needed to be gentle, friendly, pretty, and above all else non-techie freindly. So, detailed instructions on the basics of command line programs can be inculded in the documentation. 
+ArgDoc came to be when I started freelancing building one-off scripts for clients. The documentation needed to be gentle, friendly, non-ugly, and above all else non-techie freindly. So, with those needs in mind, I added an option for including detailed instructions on the basic "how to" of command line programs. It answers questions such as "what is a flag," and "How do I run this." Basic stuff to get someone unfamiliar with the command line up and running. 
 
 Requirements 
 ----------
