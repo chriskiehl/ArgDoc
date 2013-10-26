@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>
+		test_input.py
+	</title>
+
+	<style> 
+		body {
+		font-family: 'Segoe UI Light', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'sans serif';
+		color: #333333;
+		}
+
+		h1 {
+			font-size: 38px;
+		}
+
+		h2 {
+			font-size: 30px;
+		}
+
+		h3 {
+			font-size: 22px;
+		}
+
+		pre {
+			background-color: #f8f8f8;
+			border: 1px solid #ddd;
+			padding-top: 5px;
+			padding-left: 10px;
+		}
+		.container {
+			width: 760px;
+			border: 1px solid #CACACA;
+			padding: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		table {
+		 	/*table-layout: fixed; */
+		 	width: 100%;
+		 	border-collapse: collapse;
+		}
+
+		.table th,
+		.table td {
+		  padding: 8px;
+		  line-height: 20px;
+		  text-align: left;
+		  vertical-align: top;
+		  border-top: 1px solid #dddddd;
+		}
+
+		.table th {
+		  border-top: 0px solid #dddddd;
+		}
+
+		.small { 
+			width: 15%;
+			overflow: hidden;
+		}
+
+		.large {
+			width: 40%;
+		}
+		
+
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<h1 class="wmd-title" id="test_input.py">test_input.py </h1>
+		<p>Validates all HTML/CSS in projects folder(s)  </p>
+
+		<hr>
+
+		<h2 class="wmd-title" id="how-to-use">How To Use</h2>
+
+		<p>Command line programs have three main parts:  </p>
+
+		<ol>
+		<li>Program Name</li>
+		<li>Flags (optional) </li>
+		<li>Arguments   </li>
+		</ol>
+
+		<p><strong>Program Name</strong> </p>
+		<p>Simply the name of the program you want to run. </p>
+
+		<pre><code> $ python test_input.py
+		</code></pre>
+
+		<p><strong>Flags</strong> </p>
+		</p>Flags are completely optional. They can be used to modify the way the program is run. For instance, to change where an output file is saved. They are preceded by two dashes and the name of the flag. </p>
+
+		<pre><code>--outfile  myfilename.txt
+		</code></pre>
+
+		<p>Flags can also be set via a shortened form which consists of a single dash, and (commonly) the first letter of the flag name.   </p>
+
+		<pre><code>-o myfilename.txt
+		</code></pre>
+
+		<p><strong>Arguments</strong> </p>
+		<p>If required by the program, arguments are used to give information that the program needs to do its work. For instance, in a calculator application, Arguments would be the numbers and operators that you give to the program to calculate</p>
+
+		<pre><code>$ calc.exe 5 + 2  
+		</code></pre>
+
+		<p><strong>Example</strong>  </p>
+
+		<p>Using all of the above info, here is an example of running a command line program with both flags and arguments. </p>
+
+		<pre><code>$ python calc.py --saveresults myfile.txt 38 / 2 
+		</code></pre>
+
+		<br>
+		<hr>
+
+		<h2 class="wmd-title" id="documentation">Documentation</h2>
+
+		<div>
+			<table class="table">
+				<tr>
+					<th>Option String</th>
+					<th>Required </th>
+					<th>Choices </th>
+					<th>Default</th>
+					<th class="large">Option Summary</th>
+				</tr>
+				<tr><td>['-h', '--help']</td><td>False</td><td>None</td><td>==SUPPRESS==</td><td>show this help message and exit</td></tr>
+<tr><td>['-v', '--ver']</td><td>False</td><td>None</td><td>None</td><td>Set Doctype version to validate against</td></tr>
+<tr><td>['-a', '--auto']</td><td>True</td><td>None</td><td>None</td><td>Attempt to automatically detect Doctype</td></tr>
+<tr><td>['-o', '--out']</td><td>False</td><td>None</td><td>None</td><td>Save output to text file</td></tr>
+<tr><td>['-c', '--css']</td><td>False</td><td>None</td><td>True</td><td>Set check CSS to False</td></tr>
+<tr><td>['-m', '--html']</td><td>False</td><td>None</td><td>True</td><td>Set check HTML to False</td></tr>
+<tr><td>['-r', '--rec']</td><td>True</td><td>None</td><td>None</td><td>Recursively walk through all folders in the project directory</td></tr>
+<tr><td>['-g', '--verbose']</td><td>True</td><td>None</td><td>False</td><td>Toggle verbose output on</td></tr>
+<tr><td>['-l', '--highlight']</td><td>False</td><td>None</td><td>None</td><td>Highlight reported errors in HTML files</td></tr>
+<tr><td>[]</td><td>True</td><td>None</td><td>None</td><td>Filename(s) to validate</td></tr>  
+			</table>
+		</div>
+	</div>
+</body>
+</html>

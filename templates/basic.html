@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>
+		{module_title}
+	</title>
+
+	<style> 
+		body [%
+		font-family: 'Segoe UI Light', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'sans serif';
+		color: #333333;
+		%]
+
+		h1 [%
+			font-size: 38px;
+		%]
+
+		h2 [%
+			font-size: 30px;
+		%]
+
+		h3 [%
+			font-size: 22px;
+		%]
+
+		pre [%
+			background-color: #f8f8f8;
+			border: 1px solid #ddd;
+			padding-top: 5px;
+			padding-left: 10px;
+		%]
+		.container [%
+			width: 764px;
+			border: 1px solid #CACACA;
+			padding: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		%]
+
+		table [%
+		 	table-layout: fixed; width: 100%;
+		%]
+
+		.table th,
+		.table td [%
+		  padding: 8px;
+		  line-height: 20px;
+		  text-align: left;
+		  vertical-align: top;
+		  border-top: 1px solid #dddddd;
+		%]
+
+		.table th [%
+		  border-top: 0px solid #dddddd;
+		%]
+		
+
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<h1 class="wmd-title" id="{module_title}">{module_title} </h1>
+
+		<p>{prog_decription}  </p>
+
+		<hr>
+
+		<h2 class="wmd-title" id="documentation">Documentation</h2>
+
+		<div>
+			<table class="table">
+				<tr>
+					<th>Option String</th>
+					<th>Required </th>
+					<th>Choices </th>
+					<th>Default</th>
+					<th>Option Summary</th>
+				</tr>
+				{table_data}  
+			</table>
+		</div>
+	</div>
+</body>
+</html>

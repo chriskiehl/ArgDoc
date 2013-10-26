@@ -26,26 +26,26 @@ Requirements
 ArgDoc works by parsing the Python AST and pulling out references to `argparse.ArgumentParser`, so the older [optparse](http://docs.python.org/2/library/optparse.html) module will not work (though support could be wrangled in if anyone needs it).   
 
 
--------------------------------------------------------  
+---  
 
 
 Usage
 -----
 
-ArgDoc comes in three flavors; all of them named `makedoc`
+ArgDoc comes in three flavors; all of them named `generate_doc`
 
-* `@makedoc` *( decorator )*  
-* `makedoc()` *( function )*
-* `makedoc`  *( commandline )*   
+* `@generate_doc` *( decorator )*  
+* `generate_doc()` *( function )*
+* `generate_doc`  *( commandline )*   
  
 
-####@makedoc
+####@generate_doc
 
-Suggested method. Simply decorate your main function with `@makedoc` and everytime you run your program up-to-date documentation will be generated. 
+Suggested method. Simply decorate your main function with `@generate_doc` and everytime you run your program up-to-date documentation will be generated. 
 
 To run with default settings: 
 
-    @makedoc 
+    @generate_doc 
     def main():
         parser = argparse.ArgumentParser(bla bla bla) 
         # rest of code.. 
@@ -53,14 +53,14 @@ To run with default settings:
     
 or with settings of your choice. 
 
-    @makedoc(format='pdf', beginner=True)
+    @generate_doc(format='pdf', beginner=True)
     def main():
         parser = argparse.ArgumentParser(bla bla bla) 
         # rest of code.. 
 
-####makedoc()
+####generate_doc()
 
-Alternatively, you can pass your `ArgumentParser` object to the `makedoc` function directly. 
+Alternatively, you can pass your `ArgumentParser` object to the `generate_doc` function directly. 
 
     from argdoc import generate_doc 
     
@@ -72,13 +72,13 @@ Alternatively, you can pass your `ArgumentParser` object to the `makedoc` functi
         generate_doc(parser)
 
 
-####makedoc (commandline) 
+####generate_doc (commandline) 
 
 Finally, if preferred, you can run argDoc as a commandline tool. 
 
-    $user python argdoc.py --f pdf name_of_script_to_document.py
+    $user python argdoc.py --f pdf name_of_script_to_document.py   
 
----------------------------------------------------------------------  
+----  
 
 
 Contact

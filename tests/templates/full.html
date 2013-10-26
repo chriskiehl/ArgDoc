@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>
+		{module_title}
+	</title>
+
+	<style> 
+		body [%
+		font-family: 'Segoe UI Light', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'sans serif';
+		color: #333333;
+		%]
+
+		h1 [%
+			font-size: 38px;
+		%]
+
+		h2 [%
+			font-size: 30px;
+		%]
+
+		h3 [%
+			font-size: 22px;
+		%]
+
+		pre [%
+			background-color: #f8f8f8;
+			border: 1px solid #ddd;
+			padding-top: 5px;
+			padding-left: 10px;
+		%]
+		.container [%
+			width: 760px;
+			border: 1px solid #CACACA;
+			padding: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		%]
+
+		table [%
+		 	/*table-layout: fixed; */
+		 	width: 100%;
+		 	border-collapse: collapse;
+		%]
+
+		.table th,
+		.table td [%
+		  padding: 8px;
+		  line-height: 20px;
+		  text-align: left;
+		  vertical-align: top;
+		  border-top: 1px solid #dddddd;
+		%]
+
+		.table th [%
+		  border-top: 0px solid #dddddd;
+		%]
+
+		.small [% 
+			width: 15%;
+			overflow: hidden;
+		%]
+
+		.large [%
+			width: 40%;
+		%]
+		
+
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<h1 class="wmd-title" id="{module_title}">{module_title} </h1>
+		<p>{prog_decription}  </p>
+
+		<hr>
+
+		<h2 class="wmd-title" id="how-to-use">How To Use</h2>
+
+		<p>Command line programs have three main parts:  </p>
+
+		<ol>
+		<li>Program Name</li>
+		<li>Flags (optional) </li>
+		<li>Arguments   </li>
+		</ol>
+
+		<p><strong>Program Name</strong> </p>
+		<p>Simply the name of the program you want to run. </p>
+
+		<pre><code> $ python {module_title}
+		</code></pre>
+
+		<p><strong>Flags</strong> </p>
+		</p>Flags are completely optional. They can be used to modify the way the program is run. For instance, to change where an output file is saved. They are preceded by two dashes and the name of the flag. </p>
+
+		<pre><code>--outfile  myfilename.txt
+		</code></pre>
+
+		<p>Flags can also be set via a shortened form which consists of a single dash, and (commonly) the first letter of the flag name.   </p>
+
+		<pre><code>-o myfilename.txt
+		</code></pre>
+
+		<p><strong>Arguments</strong> </p>
+		<p>If required by the program, arguments are used to give information that the program needs to do its work. For instance, in a calculator application, Arguments would be the numbers and operators that you give to the program to calculate</p>
+
+		<pre><code>$ calc.exe 5 + 2  
+		</code></pre>
+
+		<p><strong>Example</strong>  </p>
+
+		<p>Using all of the above info, here is an example of running a command line program with both flags and arguments. </p>
+
+		<pre><code>$ python calc.py --saveresults myfile.txt 38 / 2 
+		</code></pre>
+
+		<br>
+		<hr>
+
+		<h2 class="wmd-title" id="documentation">Documentation</h2>
+
+		<div>
+			<table class="table">
+				<tr>
+					<th>Option String</th>
+					<th>Required </th>
+					<th>Choices </th>
+					<th>Default</th>
+					<th class="large">Option Summary</th>
+				</tr>
+				{table_data}  
+			</table>
+		</div>
+	</div>
+</body>
+</html>
